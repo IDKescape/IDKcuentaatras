@@ -14,17 +14,29 @@
         height: 100vh;
         margin: 0;
         flex-direction: column;
+        text-align: center;
+        transition: background-color 1s;
     }
+
     #countdown {
-        font-size: 80px;
+        font-size: 70px;
+        font-weight: bold;
+    }
+
+    #final {
+        display: none;
+        font-size: 40px;
         font-weight: bold;
     }
 </style>
 </head>
 <body>
 
-<h1>Cuenta atrás</h1>
 <div id="countdown"></div>
+
+<div id="final">
+    Hoy os lo diremos todo a las 17 horas
+</div>
 
 <script>
 var countDownDate = new Date("April 1, 2026 00:00:00").getTime();
@@ -43,7 +55,9 @@ var x = setInterval(function() {
 
     if (distance < 0) {
         clearInterval(x);
-        document.getElementById("countdown").innerHTML = "¡Ha llegado el día!";
+        document.getElementById("countdown").style.display = "none";
+        document.body.style.backgroundColor = "red";
+        document.getElementById("final").style.display = "block";
     }
 }, 1000);
 </script>
