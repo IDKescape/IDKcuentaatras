@@ -6,20 +6,27 @@
   <style>
     body {
       margin: 0;
-      background-color: black;
+      background: black;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
     }
-    img {
+    .contenedor {
       width: 1200px;
       height: 800px;
-      object-fit: cover; /* mantiene proporción y recorta si es necesario */
+      overflow: hidden;
+    }
+    .contenedor img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <img src="IMG_9262.jpg" alt="Imagen roja abstracta">
+  <div class="contenedor">
+    <img src="IMG_9262.jpg" alt="imagen">
+  </div>
 </body>
 </html>
